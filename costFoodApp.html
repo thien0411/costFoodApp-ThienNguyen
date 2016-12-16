@@ -1,0 +1,165 @@
+<!-- Thien Nguyen. HW4 CSCE 120 Fall 2016-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+
+    <title>Cost of Food App</title>
+
+    <script type="text/javascript">
+		function foo(a, b, c) {
+			var chart = new CanvasJS.Chart("chartContainer", {
+				title: {
+					text: "A graph explains more detail about how much Children and Alduts food plan cost"
+				},
+				data: [{
+					type: "column",
+					dataPoints: [
+						{ y: a, label: "Total Cost of Children" },
+						{ y: b, label: "Total Cost of Male Adult" },
+						{ y: c, label: "Total Cost of Female Adult" },
+
+
+
+
+					]
+				}]
+			});
+			chart.render();
+		}
+
+
+
+	</script>
+
+
+     <script type="text/javascript">
+		function foo2(a, b, c, d) {
+			var chart = new CanvasJS.Chart("chartContainer2", {
+				title: {
+					text: "A graph comepares 4 type of plans you could choose: "
+				},
+				data: [{
+					type: "column",
+					dataPoints: [
+						{ y: a, label: "Thrifty Plan" },
+						{ y: b, label: "Low-Cost Plan" },
+						{ y: c, label: "Moderate Cost Plan" },
+            { y: d, label: "Liberal Plan" },
+
+
+
+
+					]
+				}]
+			});
+			chart.render();
+		}
+
+
+
+	</script>
+	<script src="canvasjs.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="costFoodApp.js"></script>
+  </head>
+
+
+  <body>
+
+
+  <div class="container">
+
+    <div class="jumbotron">
+    <h2>Cost of Food App (Based on "Food report for OCTORBER 2016" Data)</h2>
+        <div id="errorArea"></div>
+
+
+
+      <p>Please enter the details on the composition of your family:</p>
+
+        <div class="container">
+            <div class="row">
+                <div id="numChildDiv" class="col-md-2">Enter the number of Children:</div>
+
+                <div class="col-md-3"><input type="text" id="numChild" value=""/></div>
+            </div>
+
+
+            <button type="button" class="btn btn-lrg btn-primary" onclick="generateChild()">Enter children Age</button>
+          <br></br>
+
+          <div id="generateChild"></div>
+
+            <div class="row">
+                <div id="numAdultDiv" class="col-md-2" >Enter the number of adults:</div>
+                <div class="col-md-2"><input type="text" id="numAdult" value=""/></div>
+            </div>
+
+
+
+
+            <button type="button" class="btn btn-lrg btn-primary" onclick="generateAdult()">Adults Age and Genders</button>
+          <br></br>
+
+          <div id="generateAdult"></div>
+
+
+        <p>Select the type of plan
+           <select id="plan">
+                <option value="0">Thrifty</option>
+               <option value="1">Low Cost</option>
+               <option value="2">Moderate</option>
+               <option value="3">Liberal</option>
+           </select>
+       </p>
+
+
+      <br></br>
+            <button type="button" class="btn btn-lrg btn-primary" onclick="monthlyPlan()">Get Monthly Plan</button>
+
+
+     <br></br>
+
+
+      <div id="resultArea"></div>
+
+
+  <h2>Table of the projected annual cost of food over the next 10 years:</h2>
+        <div class="container">
+      <table class="table" id="AssumingTableArea">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+
+          <tbody>
+          </tbody>
+      </table>
+      </div>
+
+
+
+
+  <div id="chartContainer" style="height: 400px; width: 100%;"></div>
+  <div id="chartContainer2" style="height: 400px; width: 100%;"></div>
+
+        </div>
+    </div>
+  </div>
+
+  </body>
+</html>
